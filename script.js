@@ -48,12 +48,12 @@ function playAgainFn() {
 function rockFn() {
     let randomNum = Math.trunc(Math.random() * 3 + 1);
     if (randomNum === 1) { // rock
-        wlt.textContent = "Rock vs Rock | Tie";
+        wlt.textContent = "Rock🪨 vs Rock🪨 | Tie";
     } else if (randomNum === 2 && randomNum < 3) { // paper
-        wlt.textContent = "Rock vs Paper | Bot wins";
+        wlt.textContent = "Rock🪨 vs Paper📃 | Bot wins";
         botScore += 1;
     } else if (randomNum === 3) { // scissor
-        wlt.textContent = " Rock vs Scissor | You win";
+        wlt.textContent = " Rock🪨 vs Scissor✂️ | You win";
         youScore += 1;
     }
     updateScore();
@@ -62,12 +62,12 @@ function rockFn() {
 function paperFn() {
     let randomNum = Math.trunc(Math.random() * 3 + 1);
     if (randomNum === 1) { // rock
-        wlt.textContent = "Paper vs Rock | You win";
+        wlt.textContent = "Paper📃 vs Rock🪨 | You win";
         youScore += 1;
     } else if (randomNum === 2) { // paper
-        wlt.textContent = "Paper vs Paper | Tie";
+        wlt.textContent = "Paper📃 vs Paper📃 | Tie";
     } else if (randomNum === 3) { // scissor
-        wlt.textContent = "Paper vs Scissor | Bot win";
+        wlt.textContent = "Paper📃 vs Scissor✂️ | Bot win";
         botScore += 1;
     }
     updateScore();
@@ -76,13 +76,13 @@ function paperFn() {
 function scissorFn() {
     let randomNum = Math.trunc(Math.random() * 3 + 1);
     if (randomNum === 1) { // rock
-        wlt.textContent = "Scissor vs Rock | Bot win";
+        wlt.textContent = "Scissor✂️ vs Rock🪨 | Bot win";
         botScore += 1;
     } else if (randomNum === 2) { // paper
-        wlt.textContent = "Scissor vs Paper | You win";
+        wlt.textContent = "Scissor✂️ vs Paper📃 | You win";
         youScore += 1;  
     } else if (randomNum === 3) { // scissor
-        wlt.textContent = "Scissor vs Scissor | Tie";
+        wlt.textContent = "Scissor✂️ vs Scissor | Tie";
     }
     updateScore();
 }
