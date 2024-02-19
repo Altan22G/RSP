@@ -17,23 +17,23 @@ function updateScore() {
 
     if (youScore === 10) {
         wlt.textContent = "You won the game🥳";
-        disableButtons();
+        buttons('remove');
     } else if (botScore === 10) {
         wlt.textContent = "Bot won the game🎉";
-        disableButtons();
+        buttons('remove');
     }
 }
 
-function playButtons() {
-    rockBtn.addEventListener("click", rockFn);
-    paperBtn.addEventListener("click", paperFn);
-    scissorsBtn.addEventListener("click", scissorFn);
-}
-
-function disableButtons() {
-    rockBtn.removeEventListener("click", rockFn);
-    paperBtn.removeEventListener("click", paperFn);
-    scissorsBtn.removeEventListener("click", scissorFn);
+function buttons(action) {
+    if (action === 'add') {
+        rockBtn.addEventListener("click", rockFn);
+        paperBtn.addEventListener("click", paperFn);
+        scissorsBtn.addEventListener("click", scissorFn);
+    } else if (action === 'remove') {
+        rockBtn.removeEventListener("click", rockFn);
+        paperBtn.removeEventListener("click", paperFn);
+        scissorsBtn.removeEventListener("click", scissorFn);
+    }
 }
 
 function playAgainFn() {
@@ -42,7 +42,7 @@ function playAgainFn() {
     bot.textContent = 0;
     youScore = 0;
     botScore = 0;
-    playButtons();
+    buttons('add');
 }
 
 function rockFn() {
@@ -87,5 +87,5 @@ function scissorFn() {
     updateScore();
 }
 
-playButtons();
+buttons('add');
 playAgain.addEventListener("click", playAgainFn);
